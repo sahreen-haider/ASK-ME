@@ -17,7 +17,6 @@ before running fill up your API secret keys in
 credenti.py
 
 
-
 ## The project is still under Progress, Will try to update it soon
 
 
