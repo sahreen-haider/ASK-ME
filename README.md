@@ -13,7 +13,7 @@ Moreover the code is implemented using streamlit for visual aspects
 - up to date knowledge
 - results from internet
 
-before running fill up your API secret keys in 
+before running fill up your API secret keys in
 credenti.py
 
 
