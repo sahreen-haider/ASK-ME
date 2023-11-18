@@ -5,7 +5,6 @@ from langchain.llms import OpenAI
 from langchain.agents import AgentType, initialize_agent, load_tools
 from langchain.memory import ConversationBufferMemory
 import streamlit as st
-import pornhub
 
 
 os.environ['OPENAI_API_KEY'] = OPENAI_KEY
