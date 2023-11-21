@@ -30,5 +30,3 @@ agent = initialize_agent(
 prompt = st.text_input('**Please enter your Prompt here:** ')
 resultant = agent.run(prompt)
 st.write(resultant)
-
-
