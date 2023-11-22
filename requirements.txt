@@ -1,6 +1,8 @@
 streamlit
+heroku
 openai
 langchain
 serpapi
 google-search-results
 numexpr
+boto3

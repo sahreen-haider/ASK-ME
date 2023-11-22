@@ -7,8 +7,8 @@ import streamlit as st
 import serpapi
 
 
-os.environ['OPENAI_API_KEY'] = OPENAI_KEY
-os.environ['SERPAPI_API_KEY'] = SERPAPI_KEY
+os.environ['OPENAI_API_KEY'] = process.env.openai;
+os.environ['SERPAPI_API_KEY'] = process.env.serpapi;
 
 
 st.title(':rainbow[ASK ME]')
