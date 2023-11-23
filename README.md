@@ -13,7 +13,7 @@ it can search from google search engine and produce you the results in a more de
 Moreover the POC is deployed using streamlit and over its cloud.
 
 ## You can access the web app using the url given below:
-[https://askmeapp.streamlit.app/](url)
+https://askmeapp.streamlit.app/
 
 ### Features
 - up to date knowledge
