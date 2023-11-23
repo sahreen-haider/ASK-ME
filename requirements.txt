@@ -1,8 +1,7 @@
 streamlit
-heroku
 openai
 langchain
 serpapi
 google-search-results
-numexpr
+# numexpr
 boto3
