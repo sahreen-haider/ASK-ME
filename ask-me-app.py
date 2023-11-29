@@ -12,8 +12,9 @@ os.environ['SERPAPI_API_KEY'] = st.secrets["SERPAPI_KEY"]
 
 
 st.title(':rainbow[ASK ME]')
+temp = st.slider(label='How creative should be the ASK ME CHAT be: ', min_value=0.0, max_value=1.0, value=0.9)
 
-llm = OpenAI(temperature=0.9)
+llm = OpenAI(temperature=temp)
 
 memory = ConversationBufferMemory()
 
