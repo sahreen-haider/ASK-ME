@@ -3,12 +3,16 @@ from langchain.llms import OpenAI
 from langchain.agents import AgentType, initialize_agent, load_tools
 from langchain.memory import ConversationBufferMemory
 import streamlit as st
+import whisper
+
 import serpapi
+from audio_recorder_streamlit import audio_recorder
 # from decouple import config
+OPENAI_KEY = "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"
+SERPAPI_KEY = "654b8bee0c754d8a87403bc292cffb8c2296190e6bf88f86f96a7f4d67d118cf"
 
-
-os.environ['OPENAI_API_KEY'] = st.secrets["OPENAI_KEY"]
-os.environ['SERPAPI_API_KEY'] = st.secrets["SERPAPI_KEY"]
+os.environ['OPENAI_API_KEY'] = OPENAI_KEY
+os.environ['SERPAPI_API_KEY'] = SERPAPI_KEY
 
 
 st.title(':rainbow[ASK ME]')
@@ -27,6 +31,22 @@ agent = initialize_agent(
     memory = memory,
     verbose = False
 )
-prompt = st.text_input('**Please enter your Prompt here:** ')
-resultant = agent.run(prompt)
-st.write(resultant)
+col1, col2 = st.columns(2)
+prompt = col1.text_input('**Please enter your Prompt here:** ')
+audio_bytes = audio_recorder(
+    text="record",
+    recording_color="#e8b62c",
+    neutral_color="#6aa36f",
+    icon_name="user",
+    icon_size="2x",
+
+)
+if audio_bytes:
+    model = whisper.load_model('base')
+    result = model.transcribe(col2.audio(audio_bytes, format="audio/wav"))
+if prompt:
+    resultant = agent.run(prompt)
+    st.write(resultant)
+else:
+    agent.run(result["text"])
+    st.write(result)
