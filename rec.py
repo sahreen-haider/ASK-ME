@@ -1,8 +1,6 @@
 import sounddevice as sd
 from scipy.io.wavfile import write
-import tqdm
 import whisper
-from audio_recorder_streamlit import audio_recorder
 
 def record_audio(duration, file_name):
     fs = 44100   # sampling frequency
