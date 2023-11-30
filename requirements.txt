@@ -10,3 +10,4 @@ pyaudio
 wave
 portaudio
 sounddevice
+scipy
