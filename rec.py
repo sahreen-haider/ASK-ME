@@ -15,13 +15,6 @@ def record_audio(duration, file_name):
 
 
 def transcribe_to_text(file_name):
-
     model = whisper.load_model('base')      # openai SST model
-    result = model.transcribe('/Users/sahreenhaider/Documents/ASK-ME/data/prompt.wav')
-    return result               # returning the text of transcribed audio
-
-
-
-if __name__ == '__main__':
-    record_audio(10 ,'/Users/sahreenhaider/Documents/ASK-ME/data/prompt.wav')
-    transcribe_to_text('/Users/sahreenhaider/Documents/ASK-ME/data/prompt.wav')
+    result = model.transcribe('/Users/sahreenhaider/Documents/ASK-ME/data/prompt.mp3')
+    return result["text"]               # returning the text of transcribed audio
