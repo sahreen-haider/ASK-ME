@@ -7,3 +7,4 @@ numexpr
 boto3
 whisper
 pyaudio
+wave
