@@ -5,6 +5,5 @@ serpapi
 google-search-results
 numexpr
 whisper
-pyaudio
 sounddevice
 scipy
