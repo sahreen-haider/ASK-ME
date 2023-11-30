@@ -4,10 +4,6 @@ langchain
 serpapi
 google-search-results
 numexpr
-boto3
 whisper
-pyaudio
-wave
-portaudio
 sounddevice
 scipy
