@@ -8,3 +8,5 @@ boto3
 whisper
 pyaudio
 wave
+portaudio
+sounddevice
