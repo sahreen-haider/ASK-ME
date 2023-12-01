@@ -1,5 +1,5 @@
-FROM pyhton:3.11-alpine
+FROM pyhton:alpine-3.11
 WORKDIR /app
 COPY . /app
-RUN pip install -r requirements.txt
-CMD streamlit run ask-me-app.py 
+RUN streamlit run ask-me-app.py
+CMD pip install -r requirements.txt
