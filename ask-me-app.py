@@ -7,8 +7,8 @@ from rec import *
 
 
 with open('secrets.txt', 'r+') as f:
-    OPENAI_KEY = f.readlines()[0]
-    SERPAPI_KEY = f.readlines()[1]
+    secrets = f.readlines()
+    OPENAI_KEY, SERPAPI_KEY = secrets[0], secrets[1]
 
 os.environ['OPENAI_API_KEY'] = OPENAI_KEY
 os.environ['SERPAPI_API_KEY'] = SERPAPI_KEY
