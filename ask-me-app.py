@@ -6,12 +6,8 @@ import streamlit as st
 from rec import *
 
 
-with open('secrets.txt', 'r+') as f:
-    secrets = f.readlines()
-    OPENAI_KEY, SERPAPI_KEY = secrets[0], secrets[1]
-
-os.environ['OPENAI_API_KEY'] = OPENAI_KEY
-os.environ['SERPAPI_API_KEY'] = SERPAPI_KEY
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_KEY']
+os.environ['SERPAPI_API_KEY'] = st.secrets['SERPAPI_KEY']
 
 path_to_audio = '/Users/sahreenhaider/Documents/ASK-ME/data/prompt.mp3'
 
