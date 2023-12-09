@@ -4,14 +4,22 @@ from langchain.agents import AgentType, initialize_agent, load_tools
 from langchain.memory import ConversationBufferMemory
 import streamlit as st
 from rec import *
+from credentials import *
 
 
-os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_KEY']
-os.environ['SERPAPI_API_KEY'] = st.secrets['SERPAPI_KEY']
+os.environ['OPENAI_API_KEY'] = key_1
+os.environ['SERPAPI_API_KEY'] = key_2
 
 path_to_audio = '/Users/sahreenhaider/Documents/ASK-ME/data/prompt.mp3'
 
-st.title(':rainbow[ASK ME]')
+col_L, col_T = st.columns([2, 8])
+
+with col_L:
+    st.image('/Users/sahreenhaider/Documents/ASK-ME/data/_1320224e-7ac8-4d17-b833-d527334b6acf.jpeg', width=100)
+
+with col_T:
+    st.title(':rainbow[ASK ME]')
+
 temp = st.slider(label='How creative should be the ASK ME CHAT be: ', min_value=0.0, max_value=1.0, value=0.9)
 
 llm = OpenAI(temperature=temp)
