@@ -12,15 +12,15 @@ os.environ['SERPAPI_API_KEY'] = key_2
 
 path_to_audio = '/Users/sahreenhaider/Documents/ASK-ME/data/prompt.mp3'
 
-col_L, col_T = st.columns([2, 8])
+col_L, col_T = st.columns([1, 9])
 
 with col_L:
-    st.image('/Users/sahreenhaider/Documents/ASK-ME/data/_1320224e-7ac8-4d17-b833-d527334b6acf.jpeg', width=100)
+    st.image('/Users/sahreenhaider/Documents/ASK-ME/data/Untitled design.png', width=100)
 
 with col_T:
-    st.title(':rainbow[ASK ME]')
+    st.image('/Users/sahreenhaider/Documents/ASK-ME/data/Miss Katherine-2.png', width=180)
 
-temp = st.slider(label='How creative should be the ASK ME CHAT be: ', min_value=0.0, max_value=1.0, value=0.9)
+temp = st.slider(label='How creative should the ASK ME CHAT be: ', min_value=0.0, max_value=1.0, value=0.9)
 
 llm = OpenAI(temperature=temp)
 
