@@ -7,8 +7,8 @@ from rec import *
 from credentials import *
 
 
-os.environ['OPENAI_API_KEY'] = OPENAI_KEY
-os.environ['SERPAPI_API_KEY'] = SERPAPI_KEY
+os.environ['OPENAI_API_KEY'] = st.secrets['SERPAPI_KEY']
+os.environ['SERPAPI_API_KEY'] = st.secrets['OPENAI_KEY']
 
 path_to_audio = '/Users/sahreenhaider/Documents/ASK-ME/data/prompt.mp3'
 

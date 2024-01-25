@@ -1,2 +1,0 @@
-SERPAPI_KEY = '8420c762322713f7fba3f0f53bf99ed3658b58f8bb61ff6af0c3dd11f87b41ef'
-OPENAI_KEY = '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'
