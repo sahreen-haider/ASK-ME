@@ -7,8 +7,8 @@ from rec import *
 from credentials import *
 
 
-os.environ['OPENAI_API_KEY'] = key_1
-os.environ['SERPAPI_API_KEY'] = key_2
+os.environ['OPENAI_API_KEY'] = OPENAI_KEY
+os.environ['SERPAPI_API_KEY'] = SERPAPI_KEY
 
 path_to_audio = '/Users/sahreenhaider/Documents/ASK-ME/data/prompt.mp3'
 
@@ -20,9 +20,20 @@ with col_L:
 with col_T:
     st.image('/Users/sahreenhaider/Documents/ASK-ME/data/Miss Katherine-2.png', width=180)
 
-temp = st.slider(label='How creative should the ASK ME CHAT be: ', min_value=0.0, max_value=1.0, value=0.9)
+col_1, col_2 = st.columns([4,6])
 
-llm = OpenAI(temperature=temp)
+with col_1:
+    temp = st.selectbox('How creative do you want the responses to be: ', ("creative", "balanced", "imitative"))
+
+
+if temp == "creative":
+    llm = OpenAI(temperature=0.9)
+if temp == "balanced":
+    llm = OpenAI(temperature=0.6)
+if temp == "imitative":
+    llm = OpenAI(temperature=0.2)
+
+
 
 memory = ConversationBufferMemory()
 
@@ -43,10 +54,9 @@ if prompt:
     result = agent.run(prompt)
     st.write(result)
 
-else:
-    if col2:
-        st.write('recording.......')
-        record_audio(7, path_to_audio)
-        st.write('recording ended.......')
-        resultant = agent.run(transcribe_to_text(path_to_audio))
-        st.write(resultant)
+elif voice:
+    st.write('recording.......')
+    record_audio(7, path_to_audio)
+    st.write('recording ended.......')
+    resultant = agent.run(transcribe_to_text(path_to_audio))
+    st.write(resultant)
