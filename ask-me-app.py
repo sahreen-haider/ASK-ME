@@ -4,7 +4,6 @@ from langchain.agents import AgentType, initialize_agent, load_tools
 from langchain.memory import ConversationBufferMemory
 import streamlit as st
 from rec import *
-from credentials import *
 
 
 os.environ['OPENAI_API_KEY'] = st.secrets['SERPAPI_KEY']
@@ -17,7 +16,6 @@ col_L, col_T = st.columns([1, 9])
 with col_L:
     st.image('/Users/sahreenhaider/Documents/ASK-ME/data/Untitled design.png', width=100)
 
-with col_T:
     st.image('/Users/sahreenhaider/Documents/ASK-ME/data/Miss Katherine-2.png', width=180)
 
 col_1, col_2 = st.columns([4,6])
