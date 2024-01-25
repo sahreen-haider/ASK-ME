@@ -8,3 +8,4 @@ whisper
 sounddevice
 scipy
 tensorflow
+portaudio
