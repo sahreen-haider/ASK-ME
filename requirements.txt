@@ -7,3 +7,4 @@ numexpr
 whisper
 sounddevice
 scipy
+tensorflow
