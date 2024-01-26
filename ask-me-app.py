@@ -6,8 +6,8 @@ import streamlit as st
 from rec import *
 
 
-os.environ['OPENAI_API_KEY'] = st.secrets['SERPAPI_KEY']
-os.environ['SERPAPI_API_KEY'] = st.secrets['OPENAI_KEY']
+os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_KEY']
+os.environ['SERPAPI_API_KEY'] = st.secrets['SERPAPI_KEY']
 
 path_to_audio = '/Users/sahreenhaider/Documents/ASK-ME/data/prompt.mp3'
 
@@ -59,4 +59,4 @@ elif col2.button('Voice'):
     resultant = agent.run(transcribe_to_text(path_to_audio))
     st.write(resultant)
 else:
-    st.write("Please enter a prompt or use voice mode")
+    st.write("Please enter a prompt or use voice model")
