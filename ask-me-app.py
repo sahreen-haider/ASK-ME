@@ -47,14 +47,16 @@ agent = initialize_agent(
 col1, col2 = st.columns(2)
 
 prompt = col1.text_input('Enter your Prompt here: ')
-voice = col2.button('voice')
+
 if prompt:
     result = agent.run(prompt)
     st.write(result)
 
-elif voice:
+elif col2.button('Voice'):
     st.write('recording.......')
     record_audio(7, path_to_audio)
     st.write('recording ended.......')
     resultant = agent.run(transcribe_to_text(path_to_audio))
     st.write(resultant)
+else:
+    st.write("Please enter a prompt or use voice mode")
